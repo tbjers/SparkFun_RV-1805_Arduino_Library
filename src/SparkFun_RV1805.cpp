@@ -702,6 +702,7 @@ void RV1805::setReferenceVoltage(uint8_t voltage)
 		break;
 	}
 	writeRegister(RV1805_CONF_KEY, RV1805_CONF_WRT);
+	#pragma GCC diagnostic warning "-Wmaybe-uninitialized"
 	writeRegister(RV1805_BREF_CTRL, value);
 }
 
